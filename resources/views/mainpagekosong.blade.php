@@ -85,7 +85,13 @@
             
             <div class="col-span-9 flex flex-col">
                 <h1 class="absolute text-secondary pt-12">Kegiatan</h1>
-                <div class="rounded-sm absolute top-20 w-8/12 h-adapt bg-danger"></div>
+                <div class="rounded-sm absolute top-20 w-8/12 h-adapt bg-danger items-center z-0"></div>
+                <img src="/images/kosong.png" alt="" class="z-10 w-1/4 mr-auto ml-auto pt-40">
+                <h1 class="text-black z-10 mr-auto ml-auto text-lg font-semibold">Belum ada kegiatan yang dapat di survey</h1>
+                <h2 class="text-secondary z-10 mr-auto ml-auto text-center px-80 text-base">Kegiatan bisa dinilai berdasarkan pengisian tiap individu
+                    agar kedepannya bisa dijadikan bahan evaluasi dari pihak
+                    penyelenggara.
+                </h2>
             </div>
         </div>
     </div>

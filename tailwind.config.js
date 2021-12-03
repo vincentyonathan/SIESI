@@ -6,7 +6,21 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    backgroundColor: theme => ({
+      ...theme('colors'),
+      'primary': '#E5E5E5',
+      'secondary': '#ffed4a',
+      'danger': '#F4F5F7',
+     }),
     extend: {
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
+        '14': 'repeat(14, minmax(0, 1fr))',
+        '20': 'repeat(20, minmax(0, 1fr))',
+      },
+      gridColumn: {
+        'span-16': 'span 16 / span 16'
+      },
       padding : {
         '0.3': '0.1rem'
       },
@@ -32,6 +46,37 @@ module.exports = {
         '120': '30rem',
         '140': '35rem',
       },
+      gridColumnStart: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+        '16': '16',
+        '17': '17',
+        '18': '18',
+        '19': '19',
+        '20': '20',
+      },
+      gridColumnEnd: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+        '16': '16',
+        '17': '17',
+        '18': '18',
+        '19': '19',
+        '20': '20',
+      },
+      textColor: {
+        'primary': '#FE705F',
+        'secondary': '#A1A1A1',
+        'danger': '#e3342f',
+      },
+      spacing: {
+        adapt: '90vh',
+        md: '16px',
+        lg: '24px',
+        xl: '48px',
+       },
     },
   },
   variants: {

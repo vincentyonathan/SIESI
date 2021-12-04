@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Hash;
+use Auth;
 
 class UserController extends Controller
 {
@@ -14,19 +16,14 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'username' => 'required',
             'password' => 'required'
         ]);
-        dd($request);
-
-        $cridentials = $request->only('email','password');
+        
+        $cridentials = $request->only('username','password');
         if(Auth::attempt($cridentials)){
-            if(Auth::user()->role == 'admin'){
-                return redirect()->route('login');
-            }
-            else {
-                return redirect()->route('login');
-            }
+            return redirect('/');
         }
+        return redirect('/login')->with('error','Invalid Credentials');
     }
 }

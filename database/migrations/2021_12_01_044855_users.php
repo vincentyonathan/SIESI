@@ -10,11 +10,8 @@ class Users extends Migration
     {   
         Schema::create('users', function (Blueprint $table) {
             $table->id('user_id');
-            $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('role');
-            $table->timestamps();
+            $table->string('username', 1024);
+            $table->string('password', 256);
         });
     }
 

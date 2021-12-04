@@ -47,7 +47,7 @@
                     </div>
                 </button>
                 <div class="py-8 w-97">
-                    <form action="" method="POST">
+                    <form action="{{route('login.post')}}" method="POST">
                         @csrf
                         <label for="email" class="justify-center text-base md:text-xl font-medium">Email</label><br>
                         <div class="py-1"></div>

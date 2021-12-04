@@ -11,6 +11,8 @@ module.exports = {
       'primary': '#E5E5E5',
       'secondary': '#ffed4a',
       'danger': '#F4F5F7',
+      'haha' : '#FE705F',
+      'btn' : 'BFB6B5',
      }),
     extend: {
       gridTemplateColumns: {
@@ -22,7 +24,8 @@ module.exports = {
         'span-16': 'span 16 / span 16'
       },
       padding : {
-        '0.3': '0.1rem'
+        '0.3': '0.1rem',
+        '0.1': '0.05rem'
       },
       width: {
         '1/7': '14.2857143%',

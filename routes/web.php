@@ -18,5 +18,5 @@ use App\Http\Controllers\UserController;
 Route::GET('/login',[UserController::class,'login_page'])->name('login');
 Route::POST('/login/post',[UserController::class,'login'])->name('login.post');
 Route::get('/', function () {
-    return view('isisurvey');
+    return view('editkegiatan');
 });

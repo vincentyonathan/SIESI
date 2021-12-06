@@ -82,11 +82,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="py-0.3 rounded-full bggaris h-full w-1"></div>
+            <div class="py-0.3 rounded-full bggaris h-fullz w-1"></div>
             
             <div class="col-span-9 flex flex-col">
                 <h1 class="absolute text-secondary pt-12">Kegiatan</h1>
-                <div class="rounded-sm absolute top-20 w-8/12 h-adapt bg-danger items-center z-0">
+                <div class="rounded-sm absolute top-20 w-8/12 h-fullz bg-danger items-center z-0">
                     <div class="flex flex-wrap px-4">
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-row items-center md:items-start py-4 px-4 bg-transparent overflow-hidden rounded-lg bg-cover h-landing bg-local relative h-32 md:h-32">

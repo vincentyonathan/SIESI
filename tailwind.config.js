@@ -14,6 +14,8 @@ module.exports = {
       'haha' : '#FE705F',
       'btn' : 'BFB6B5',
       'wt' : "#F5D6C1",
+      'woops': '#FF0000',
+      'eh' : '#7A618E',
      }),
     extend: {
       gridTemplateColumns: {
@@ -51,6 +53,7 @@ module.exports = {
         '120': '30rem',
         '140': '35rem',
         '30':'7.5rem',
+        'fullz': '130%',
       },
       gridColumnStart: {
         '13': '13',
@@ -88,5 +91,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@themesberg/flowbite/plugin')
+  ]
 }

@@ -90,7 +90,7 @@
                     <div class="flex flex-wrap px-4">
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-row items-center md:items-start py-4 px-4 bg-transparent overflow-hidden rounded-lg bg-cover h-landing bg-local relative h-32 md:h-32">
-                                <div class="pr-20 flex flex-col pt-2">
+                                <div class="pl-6 pr-16 flex flex-col pt-2">
                                     <h2 class="title1 text-footer text-base font-semibold pt-4 md:pt-0">Mengadakan Pesta Perjamuan</h2>
                                     <span class="desc1 hidden md:block md:text-sm lg:text-base text-footer pt-2 md:pb-6 lg:pb-4">
                                     Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .
@@ -119,7 +119,7 @@
                         </div>
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-row items-center md:items-start py-4 px-4 bg-transparent overflow-hidden rounded-lg bg-cover h-landing bg-local relative h-32 md:h-32">
-                                <div class="pr-20 flex flex-col pt-2">
+                                <div class="pl-6 pr-16 flex flex-col pt-2">
                                     <h2 class="title1 text-footer text-base font-semibold pt-4 md:pt-0">Mengadakan Pesta Perjamuan</h2>
                                     <span class="desc1 hidden md:block md:text-sm lg:text-base text-footer pt-2 md:pb-6 lg:pb-4">
                                     Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .
@@ -148,7 +148,7 @@
                         </div>
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-row items-center md:items-start py-4 px-4 bg-transparent overflow-hidden rounded-lg bg-cover h-landing bg-local relative h-32 md:h-32">
-                                <div class="pr-20 flex flex-col pt-2">
+                                <div class="pl-6 pr-16 flex flex-col pt-2">
                                     <h2 class="title1 text-footer text-base font-semibold pt-4 md:pt-0">Mengadakan Pesta Perjamuan</h2>
                                     <span class="desc1 hidden md:block md:text-sm lg:text-base text-footer pt-2 md:pb-6 lg:pb-4">
                                     Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .
@@ -177,7 +177,7 @@
                         </div>
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-row items-center md:items-start py-4 px-4 bg-transparent overflow-hidden rounded-lg bg-cover h-landing bg-local relative h-32 md:h-32">
-                                <div class="pr-20 flex flex-col pt-2">
+                                <div class="pl-6 pr-16 flex flex-col pt-2">
                                     <h2 class="title1 text-footer text-base font-semibold pt-4 md:pt-0">Mengadakan Pesta Perjamuan</h2>
                                     <span class="desc1 hidden md:block md:text-sm lg:text-base text-footer pt-2 md:pb-6 lg:pb-4">
                                     Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .

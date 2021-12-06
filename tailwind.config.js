@@ -13,6 +13,7 @@ module.exports = {
       'danger': '#F4F5F7',
       'haha' : '#FE705F',
       'btn' : 'BFB6B5',
+      'wt' : "#F5D6C1",
      }),
     extend: {
       gridTemplateColumns: {
@@ -34,6 +35,7 @@ module.exports = {
         '4/7': '57.1428571%',
         '5/7': '71.4285714%',
         '6/7': '85.7142857%',
+        '8/7':'90%',
         '30': '7.5rem',
         '100': '60rem',
         '99': '50rem',
@@ -48,6 +50,7 @@ module.exports = {
         '110': '27.5rem',
         '120': '30rem',
         '140': '35rem',
+        '30':'7.5rem',
       },
       gridColumnStart: {
         '13': '13',

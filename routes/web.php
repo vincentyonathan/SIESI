@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::GET('/login',[UserController::class,'login_page'])->name('login');
+Route::POST('/login/post',[UserController::class,'login'])->name('login.post');
 Route::get('/', function () {
     return view('isisurvey');
 });

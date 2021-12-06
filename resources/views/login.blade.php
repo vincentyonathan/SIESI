@@ -47,12 +47,12 @@
                     </div>
                 </button>
                 <div class="py-8 w-97">
-                    <form action="" method="POST">
+                    <form action="{{route('login.post')}}" method="POST">
                         @csrf
-                        <label for="email" class="justify-center text-base md:text-xl font-medium">Email</label><br>
+                        <label for="email" class="justify-center text-base md:text-xl font-medium">Username</label><br>
                         <div class="py-1"></div>
-                        <input name="email" type="email" class="outline-none rounded-sm border border-gray-400 py-1 px-4 w-72 md:w-full text-sm focus:ring-2 focus:ring-form
-                        @error('email') border-red-500 @enderror" value=""><br>
+                        <input name="username" type="text" class="outline-none rounded-sm border border-gray-400 py-1 px-4 w-72 md:w-full text-sm focus:ring-2 focus:ring-form
+                        @error('username') border-red-500 @enderror" value=""><br>
                         @error('email')
                             <div class="text-red-500 mt-2 text-sm">
                                 {{ $message }}

@@ -22,3 +22,4 @@ Route::POST('/login/post',[UserController::class,'login'])->name('login.post');
 
 Route::get('/addkegiatan/',[KegiatanController::class,'addkegiatanpage'])->name('addKegiatan');
 Route::POST('/addkegiatan/post',[KegiatanController::class,'addKegiatan'])->name('addKegiatan.post');
+

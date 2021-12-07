@@ -93,7 +93,7 @@
                             <div class="flex flex-col pl-8">
                                 <label for="name" class="pt-3 text-base font-medium">Nama</label>
                                 <input name="name" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name">                      
-                                <label for="message" class="pt-3 text-base font-medium">Your message</label>
+                                <label for="message" class="pt-3 text-base font-medium">Deskripsi Kegiatan</label>
                                 <textarea id="message" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
                                 <label for="date" class="pt-3 text-base font-medium">Tanggal</label>
                                     <div date-rangepicker class="flex items-center">
@@ -129,7 +129,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -149,7 +149,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -169,7 +169,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -189,7 +189,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>

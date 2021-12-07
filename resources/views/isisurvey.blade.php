@@ -118,9 +118,9 @@
                             </div>
                             <div class="px-8 flex flex-col">
                                 <div class="rounded-sm absolute top-40 h-4/6 bg-white w-8/7">
-                                    <h1 class="absolute pt-8 ml-5 font-bold text-xl">Capaian Kegiatan</h1>
-                                    <div class="flex flex-col pt-10 pt-20">
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                <h1 class="absolute pt-8 ml-5 font-bold text-xl">Capaian Kegiatan</h1>
+                                    <div class="flex flex-col pt-10 pt-20 card h-140 overflow-y-scroll">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                             <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -130,7 +130,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -140,7 +140,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                         <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -150,7 +150,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -160,7 +160,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                             <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -170,7 +170,7 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -180,8 +180,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
-                                        <div class="flex flex-col">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
+                                            <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
                                                         <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
@@ -190,12 +190,23 @@
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">Aktif</h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="pt-6">
+                                                <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h-20">
+                                        <div class="flex flex-row pl-4">
+                                            <button class="add flex flex-row">
+                                                <img src="/images/plus.png" alt="" class="h-8">
+                                                <h1 class="pt-1 pl-2">Tambah Kegiatan</h1>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -249,6 +260,36 @@
           modal.classList.toggle('pointer-events-none')
           body.classList.toggle('modal-active')
         }
+      </script>
+     <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('.card')
+            const add = document.querySelector('.add')
+            add.addEventListener('click', () => {
+                const html = `<div class="rounded-sm relative bg-white w-full h-30">
+                    <div class="flex flex-col">
+                        <div class="flex flex-row px-5">
+                            <div class="flex flex-col">
+                                <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
+                                <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
+                            </div>
+                            <div>
+                                <div class="relative mr-auto ml-auto pt-4 pl-20">
+                                    <div class="py-1 md:py-3 rounded-md bg-wt">
+                                        <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
+                    </div>
+                </div>`;
+                const addCard = document.querySelector(`.card`);
+                addCard.innerHTML += html;
+            });
+        })
       </script> 
 </body>
 </html>

@@ -116,10 +116,10 @@
                                 <div class="py-0.1 rounded-full bggaris w-full"></div>
                             </div>
                             <div class="px-8 flex flex-col">
-                                <div class="rounded-sm absolute top-80 h-3/5 bg-white w-8/7">
-                                <h1 class="absolute pt-8 ml-5 font-bold text-xl">Capaian Kegiatan</h1>
-                                    <div class="flex flex-col pt-10 pt-20">
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                <div class="rounded-sm absolute top-80 h-3/5 bg-white w-8/7">   
+                                    <h1 class="absolute pt-8 ml-5 font-bold text-xl">Capaian Kegiatan</h1>
+                                    <div class="flex flex-col pt-10 pt-20 card h-140 overflow-y-scroll">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                             <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -127,11 +127,18 @@
                                                         <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
                                                     </div>
                                                     <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
+                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
                                                                 <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
+                                                    </div>
+                                                    <div>
+                                                        <button>
+                                                            <a href="">
+                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
+                                                            </a>
+                                                        </button>   
                                                     </div>
                                                 </div>
                                                 <div class="pt-6">
@@ -139,7 +146,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                         <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -147,11 +154,18 @@
                                                         <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
                                                     </div>
                                                     <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
+                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
                                                                 <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
+                                                    </div>
+                                                    <div>
+                                                        <button>
+                                                            <a href="">
+                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
+                                                            </a>
+                                                        </button>   
                                                     </div>
                                                 </div>
                                                 <div class="pt-6">
@@ -159,7 +173,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                             <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -167,11 +181,18 @@
                                                         <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
                                                     </div>
                                                     <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
+                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
                                                                 <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
+                                                    </div>
+                                                    <div>
+                                                        <button>
+                                                            <a href="">
+                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
+                                                            </a>
+                                                        </button>   
                                                     </div>
                                                 </div>
                                                 <div class="pt-6">
@@ -179,7 +200,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-transparent w-full h-30">
+                                        <div class="rounded-sm relative bg-white w-full h-30">
                                             <div class="flex flex-col">
                                                 <div class="flex flex-row px-5">
                                                     <div class="flex flex-col">
@@ -187,11 +208,18 @@
                                                         <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
                                                     </div>
                                                     <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
+                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
                                                                 <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
                                                             </div>
                                                         </div>  
+                                                    </div>
+                                                    <div>
+                                                        <button>
+                                                            <a href="">
+                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
+                                                            </a>
+                                                        </button>   
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,15 +227,13 @@
                                                 <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
                                             </div>
                                         </div>
-                                        <div class="h-20">
-                                            <div class="flex flex-row pl-4">
-                                                <button>
-                                                    <a href="" class="flex flex-row">
-                                                        <img src="/images/plus.png" alt="" class="h-8">
-                                                        <h1 class="pt-1 pl-2">Tambah Kegiatan</h1>
-                                                    </a>
-                                                </button>
-                                            </div>
+                                    </div>
+                                    <div class="h-20">
+                                        <div class="flex flex-row pl-4">
+                                            <button class="add flex flex-row">
+                                                <img src="/images/plus.png" alt="" class="h-8">
+                                                <h1 class="pt-1 pl-2">Tambah Kegiatan</h1>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -220,15 +246,17 @@
                         <button class="py-1 md:py-2 rounded-md bg-btn">
                             <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
                         </button>
-                        <button class="py-1 md:py-2 rounded-md bg-woops">
+                        <button id="myBtn2" class="py-1 md:py-2 rounded-md bg-woops">
                             <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-white">Hapus</a>
                         </button>
+                        </div>
                         <button class="py-1 md:py-2 rounded-md bg-eh">
                             <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-white">Kunci</a>
                         </button>
-                        <button class="py-1 md:py-2 rounded-md bg-wt">
+                        <button id="myBtn" class="py-1 md:py-2 rounded-md bg-wt">
                             <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Simpan</a>
                         </button>
+                        </div>
                     </div>    
                 </div>
             </div>
@@ -269,6 +297,97 @@
           body.classList.toggle('modal-active')
         }
       </script> 
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+      </script>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal2");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn2");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+      </script>
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('.card')
+            const add = document.querySelector('.add')
+            add.addEventListener('click', () => {
+                const html = `<div class="rounded-sm relative bg-white w-full h-30 pt-2">
+                    <div class="flex flex-col">
+                        <div class="flex flex-row px-5">
+                            <div class="flex flex-col">
+                                <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
+                                <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
+                            </div>
+                            <div>
+                                <div class="relative mr-auto ml-auto pt-8 pl-20">
+                                        <div class="py-1 md:py-3 rounded-md bg-wt">
+                                            <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div>
+                                    <button>
+                                        <a href="">
+                                            <img src="/images/trashbin.png" alt="" class="pt-5">
+                                        </a>
+                                    </button>   
+                                </div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
+                    </div>
+                </div>`;
+                const addCard = document.querySelector(`.card`);
+                addCard.innerHTML += html;
+            });
+        })
+      </script>
       <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
       <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/datepicker.bundle.js"></script>
 </body>

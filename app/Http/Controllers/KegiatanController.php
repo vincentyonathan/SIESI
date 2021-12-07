@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kegiatan;
+use Carbon\Carbon as Carbon;
 
 class KegiatanController extends Controller
 {
-    public function index()
+    public function addkegiatanpage()
     {
-        // return view('kegiatan');
+        return view('tambahkegiatan');
     }
 
-    public function insertData(Request $request)
+    public function mainpage()
+    {
+        $kegiatans = Kegiatan::all();
+        return view('mainpage', compact('kegiatans'));
+    }
+    
+
+    public function addKegiatan(Request $request)
     {
         $request->validate([
             'nama_kegiatan' => 'required',
@@ -24,12 +32,13 @@ class KegiatanController extends Controller
         Kegiatan::create([
             'nama_kegiatan' => $request->get('nama_kegiatan'),
             'deskripsi_kegiatan' => $request->get('deskripsi_kegiatan'),
-            'tanggal_mulai' => $request->get('tanggal_mulai'),
-            'tanggal_selesai' => $request->get('tanggal_selesai'),
+            'tanggal_mulai' => Carbon::parse($request->get('tanggal_mulai'))->format('Y-m-d'),
+            'tanggal_selesai' => Carbon::parse($request->get('tanggal_selesai'))->format('Y-m-d'),
             'status' => 1,
         ]);
 
-        // return redirect()->route('kegiatan');
+
+        return redirect()->route('mainpage');
     }
 
     public function editData(Request $request)

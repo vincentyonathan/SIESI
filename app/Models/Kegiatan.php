@@ -10,6 +10,7 @@ class Kegiatan extends Model
     use HasFactory;
     public $table = "kegiatan";
     protected $primaryKey = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'id',

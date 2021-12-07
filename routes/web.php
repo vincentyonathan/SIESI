@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KegiatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/',[KegiatanController::class,'mainpage'])->name('mainpage');
 
 Route::GET('/login',[UserController::class,'login_page'])->name('login');
 Route::POST('/login/post',[UserController::class,'login'])->name('login.post');
-Route::get('/', function () {
-    return view('editkegiatan');
-});
+
+Route::get('/addkegiatan/',[KegiatanController::class,'addkegiatanpage'])->name('addKegiatan');
+Route::POST('/addkegiatan/post',[KegiatanController::class,'addKegiatan'])->name('addKegiatan.post');
+

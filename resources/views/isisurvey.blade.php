@@ -85,26 +85,28 @@
             <div class="py-0.3 rounded-full bggaris h-fullz w-1"></div>
             
             <div class="col-span-9 flex flex-col">
-                <h1 class="absolute text-secondary pt-12">Kegiatan/$JUDUL_KEGIATAN$</h1>
+                <form action="{{route('isisurvey.post')}}" method="post">
+                @csrf
+                <h1 class="absolute text-secondary pt-12">Kegiatan</h1>
                 <div class="rounded-sm absolute top-20 w-8/12 h-fullz bg-danger items-center z-0">
                     <div class="flex flex-wrap px-4">
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-row items-center md:items-start py-4 px-4 bg-transparent overflow-hidden rounded-lg bg-cover h-landing bg-local relative h-32 md:h-32">
-                                <div class="pl-6 pr-16 flex flex-col pt-2">
-                                    <h2 class="title1 text-footer text-base font-semibold pt-4 md:pt-0">Mengadakan Pesta Perjamuan</h2>
+                                <div class="pl-6 pr-16 flex flex-col pt-2 flex-grow">
+                                    <h2 class="title1 text-footer text-base font-semibold pt-4 md:pt-0">{{$kegiatan->nama_kegiatan}}</h2>
                                     <span class="desc1 hidden md:block md:text-sm lg:text-base text-footer pt-2 md:pb-6 lg:pb-4">
-                                    Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .
+                                    {{$kegiatan->deskripsi_kegiatan}}
                                     </span>
                                 </div>
                                 <div class="flex flex-col pr-40 w-1/3 pt-2">
                                     <div class="flex flex-row">
                                         <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
-                                        <p class="text-sm ml-2 pt-2.5">20 November 2021</p>
+                                        <p class="text-sm ml-2 pt-2.5">{{Carbon\Carbon::parse($kegiatan->tanggal_mulai)->format('d M Y')}}</p>
                                     </div>
                                     <h2 class="text-secondary ml-16 mr-16 text-sm">Hingga</h2>
                                     <div class="flex flex-row">
                                         <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
-                                        <p class="text-sm ml-2 pt-2.5">13 Desember 2021</p>
+                                        <p class="text-sm ml-2 pt-2.5">{{Carbon\Carbon::parse($kegiatan->tanggal_selesai)->format('d M Y')}}</p>
                                     </div>
                                 </div>      
                                 <div class="relative mr-auto ml-auto pt-8">
@@ -122,91 +124,33 @@
                                     <div class="flex flex-col pt-10 pt-20 card h-140 overflow-y-scroll">
                                         <div class="rounded-sm relative bg-white w-full h-30">
                                             <div class="flex flex-col">
+                                                @foreach($capaian as $c)
+                                                
                                                 <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
+                                                    <div class="flex flex-col flex-grow">
+                                                        <h1 class="title1 font-bold align-top text-base">{{$c->nama_pokok}}</h1>
+                                                        <p>{{$c->deskripsi}}</p>
                                                     </div>
                                                     <div>
                                                         <div class="relative mr-auto ml-auto pt-4 pl-20">
+                                                            @if($c->nilai == 0)
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
+                                                                <input type="hidden" name="id_capaian[]" value="{{$c->id}}">
+                                                                <input name="nilai[]" type="number" min = '0' max="100" step="1" class="px-7 md:px-7 text-xs md:text-sm bg-transparent border-0 text-black">
                                                             </div>
+                                                            @else
+                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
+                                                                <input disabled type="number" min = '0' max="100" step="1" value="{{$c->nilai}}" class="px-7 md:px-7 text-xs md:text-sm bg-transparent border-0 text-black">
+                                                            </div>
+                                                            @endif
                                                         </div>  
                                                     </div>
                                                 </div>
                                                 <div class="pt-6">
                                                     <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
                                                 </div>
+                                                @endforeach
                                             </div>
-                                        </div>
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                        <div class="flex flex-col">
-                                                <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                                                    </div>
-                                                    <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                </div>
-                                                <div class="pt-6">
-                                                    <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                            <div class="flex flex-col">
-                                                <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                                                    </div>
-                                                    <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                </div>
-                                                <div class="pt-6">
-                                                    <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                            <div class="flex flex-col">
-                                                <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                                                    </div>
-                                                    <div>
-                                                        <div class="relative mr-auto ml-auto pt-4 pl-20">
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pt-6">
-                                                <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="h-20">
-                                        <div class="flex flex-row pl-4">
-                                            <button class="add flex flex-row">
-                                                <img src="/images/plus.png" alt="" class="h-8">
-                                                <h1 class="pt-1 pl-2">Tambah Kegiatan</h1>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -216,14 +160,15 @@
                     <div class="relative flex flex-row top-3/4 left-2/3">
                         <div class="px-2">
                             <button class="py-1 md:py-2 rounded-md bg-btn">
-                                <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
+                                <span href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
                             </button>
-                            <button class="py-1 md:py-2 rounded-md bg-wt">
-                                <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Simpan</a>
+                            <button type="submit" class="py-1 md:py-2 rounded-md bg-wt">
+                                <span class="px-8 md:px-16 text-xs md:text-sm text-black">Simpan</a>
                             </button>
                         </div>    
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>

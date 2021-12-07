@@ -21,7 +21,7 @@ class KegiatanController extends Controller
             'tanggal_selesai' => 'required',
         ]);
 
-        $kegiatan = new Kegiatan([
+        Kegiatan::create([
             'nama_kegiatan' => $request->get('nama_kegiatan'),
             'deskripsi_kegiatan' => $request->get('deskripsi_kegiatan'),
             'tanggal_mulai' => $request->get('tanggal_mulai'),

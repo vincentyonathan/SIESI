@@ -26,4 +26,10 @@ class UserController extends Controller
         }
         return redirect('/login')->with('error','Invalid Credentials');
     }
+    
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
 }

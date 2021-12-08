@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Kegiatan;
 use App\Models\Pencapaian;
 use Carbon\Carbon as Carbon;
+use Auth;
 
 class KegiatanController extends Controller
 {
@@ -30,6 +31,9 @@ class KegiatanController extends Controller
 
     public function addKegiatan(Request $request)
     {
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         $request->validate([
             'nama_kegiatan' => 'required',
             'deskripsi_kegiatan' => 'required',
@@ -51,6 +55,9 @@ class KegiatanController extends Controller
 
     public function editkegiatan(Request $request)
     {
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         $request->validate([
             'id' => 'required',
             'nama_kegiatan' => 'required',
@@ -71,6 +78,9 @@ class KegiatanController extends Controller
 
     public function gantiStatus($id){
 
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         $kegiatan = Kegiatan::where('id',$id)->first();
         if($kegiatan->status == 1){
             Kegiatan::where('id',$id)->update([
@@ -88,6 +98,9 @@ class KegiatanController extends Controller
     public function deleteKegiatan($id)
     {
 
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         Kegiatan::where('id',$id)->delete();
         return redirect()->route('mainpage');
     }

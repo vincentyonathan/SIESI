@@ -24,6 +24,7 @@ Route::get('/',[KegiatanController::class,'mainpage'])->name('mainpage');
 Route::GET('/login',[UserController::class,'login_page'])->name('login');
 Route::POST('/login/post',[UserController::class,'login'])->name('login.post');
 
+Route::post('/logout',[UserController::class,'logout'])->name('logout');
 // KEGIATAN
 
 Route::get('/addkegiatan/',[KegiatanController::class,'addkegiatanpage'])->name('addKegiatan');

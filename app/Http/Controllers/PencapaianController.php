@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pencapaian;
+use Auth;
+
 
 class PencapaianController extends Controller
 {
@@ -14,6 +16,9 @@ class PencapaianController extends Controller
  
     public function addCapaian(Request $request)
     {
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         $request->validate([
             'id_kegiatan' => 'required',
             'nama_pokok' => 'required',
@@ -35,6 +40,9 @@ class PencapaianController extends Controller
     public function deleteCapaian($id)
     {
 
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         Pencapaian::where('id', $id)->delete();
 
         return redirect()->route('editkegiatan',$id)->with('success', 'Data Pencapaian berhasil dihapus');

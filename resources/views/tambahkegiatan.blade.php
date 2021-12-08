@@ -48,7 +48,7 @@
                 <ul class="pt-10 flex flex-col items-center">
                     <li>
                         <button>
-                            <a href="#">
+                            <a href="{{route('mainpage')}}">
                                 <img src="/images/SIETS.png" alt="" class="w-40">
                             </a>
                         </button>    
@@ -56,7 +56,7 @@
                     <div class="py-0.3 rounded-full bggaris w-3/4"></div>
                     <li class="mt-10 w-3/4 h-10">
                         <button class="activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                            <a href="{{route('mainpage')}}" class="flex items-center">
                                 <img src="/images/kegiatanabu.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/kegiatanoren.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Kegiatan</span>
@@ -65,7 +65,7 @@
                     </li>
                     <li class="mt-10 w-3/4 h-10">
                         <button class="activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                            <a href="{{route('addKegiatan')}}" class="flex items-center">
                                 <img src="/images/tambahabu.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/tambahoren.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Tambah Kegiatan</span>
@@ -73,13 +73,14 @@
                         </button>
                     </li>
                     <li class="mt-10 w-3/4 h-10">
-                        <button class="activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button type="submit" class="flex items-center activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
                                 <img src="/images/keluarabu.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/keluaroren.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Keluar</span>
-                            </a>
-                        </button>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -120,7 +121,7 @@
                 <div class="relative flex flex-row mt-60 left-2/3">
                     <div class="px-2">
                         <button class="py-1 md:py-2 rounded-md bg-btn">
-                            <a href="/" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
+                            <a href="{{route('mainpage')}}" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
                         </button>
                         <button type="submit" class="py-1 md:py-2 rounded-md bg-wt">
                             <span class="px-8 md:px-16 text-xs md:text-sm text-black">Simpan</span>

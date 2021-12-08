@@ -12,6 +12,7 @@ class NilaiController extends Controller
 {
     public function isisurveypage($id)
     {
+        
         $kegiatan = Kegiatan::find($id);
         $capaian = Pencapaian::where('id_kegiatan', $kegiatan->id)->get();
 
@@ -19,6 +20,10 @@ class NilaiController extends Controller
             $user = Auth::user();
             $id_user = $user->user_id;
         }
+        else {
+            return redirect('/login');
+        }
+        
         foreach($capaian as $cap){
             $nilai = Penilaian::where('id_pencapaian', $cap->id)->where('id_user', $id_user)->first();
             if($nilai){

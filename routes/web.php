@@ -40,7 +40,7 @@ Route::get('/hasilsurvey/{id}',[KegiatanController::class,'hasilsurveypage'])->n
 // CAPAIAN
 
 Route::post('/addcapaian/post',[PencapaianController::class,'addCapaian'])->name('addcapaian.post');
-Route::get('/deletecapaian/{id}',[PencapaianController::class,'deleteCapaian'])->name('deletecapaian');
+Route::get('/deletecapaian/{id}/{keg}',[PencapaianController::class,'deleteCapaian'])->name('deletecapaian');
 
 // NILAI / SURVEY
 

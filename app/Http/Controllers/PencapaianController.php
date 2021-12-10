@@ -37,7 +37,7 @@ class PencapaianController extends Controller
     }
 
 
-    public function deleteCapaian($id)
+    public function deleteCapaian($id,$keg)
     {
 
         if(!Auth::check()){
@@ -45,7 +45,7 @@ class PencapaianController extends Controller
         }
         Pencapaian::where('id', $id)->delete();
 
-        return redirect()->route('editkegiatan',$id)->with('success', 'Data Pencapaian berhasil dihapus');
+        return redirect()->route('editkegiatan',$keg)->with('success', 'Data Pencapaian berhasil dihapus');
     }
 
 }

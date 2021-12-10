@@ -159,7 +159,7 @@
                                                     </div>
                                                     <div>
                                                         <button>
-                                                            <a href="{{route('deletecapaian',$c->id)}}">
+                                                            <a href="{{route('deletecapaian',[$c->id,$kegiatan->id])}}">
                                                                 <img src="/images/trashbin.png" alt="" class="pt-5">
                                                             </a>
                                                         </button>   

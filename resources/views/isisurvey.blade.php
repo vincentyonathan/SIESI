@@ -140,7 +140,7 @@
                                                                 <input name="nilai[]" type="number" min = '0' max="100" step="1" class="px-7 md:px-7 text-xs md:text-sm bg-transparent border-0 text-black">
                                                             </div>
                                                             @else
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
+                                                            <div class="py-1 md:py-1 px-0.3 rounded-md bg-wt">
                                                                 <input disabled type="number" min = '0' max="100" step="1" value="{{$c->nilai}}" class="px-7 md:px-7 text-xs md:text-sm bg-transparent border-0 text-black">
                                                             </div>
                                                             @endif
@@ -158,7 +158,7 @@
                             </div>                 
                         </div>
                     </div>
-                    <div class="relative flex flex-row top-3/4 left-2/3">
+                    <div class="relative flex flex-row top-3/4 left-1/3 ml-72">
                         <div class="px-2">
                             <button class="py-1 md:py-2 rounded-md bg-btn">
                                 <span href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>

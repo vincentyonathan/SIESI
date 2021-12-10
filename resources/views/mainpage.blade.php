@@ -103,9 +103,9 @@
                                         <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
                                         <p class="text-sm ml-2 pt-2.5">{{$kegiatan->tanggal_mulai}}</p>
                                     </div>
-                                    <h2 class="text-secondary ml-16 mr-16 text-sm">Hingga</h2>
+                                    <h2 class="text-secondary ml-10 mr-10 mt-2 text-sm">Hingga</h2>
                                     <div class="flex flex-row">
-                                        <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
+                                        <img src="/images/tanggal.png" alt="" class="w-1/6 pt-2">
                                         <p class="text-sm ml-2 pt-2.5">{{$kegiatan->tanggal_selesai}}</p>
                                     </div>
                                 </div>     
@@ -121,13 +121,13 @@
                                     <a href="{{route('isisurvey',$kegiatan->id)}}">
                                         <div class="relative mr-auto ml-auto pt-2">
                                             <div type="button" class="py-1 md:py-2 rounded-md bg-haha">
-                                                <p class="px-8 md:px-16 text-xs md:text-sm text-white">Aktif</p>
+                                                <p class="px-8 md:px-20 text-xs md:text-sm text-white">Aktif</p>
                                             </div>
                                         </div>
                                     </a>
                                     @else
                                     <button class="py-1 md:py-2 mt-2 rounded-md bg-btn">
-                                        <p class="px-8 md:px-16 text-xs md:text-sm text-white">Tutup</p>
+                                        <p class="px-8 md:px-20 text-xs md:text-sm text-white">Tutup</p>
                                     </button>
                                     @endif  
                                 </div>                         

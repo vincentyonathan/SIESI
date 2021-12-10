@@ -101,7 +101,7 @@
                                         <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
                                         <p class="text-sm ml-2 pt-2.5">{{Carbon\Carbon::parse($kegiatan->tanggal_mulai)->format('d M Y')}}</p>
                                     </div>
-                                    <h2 class="text-secondary ml-16 mr-16 text-sm">Hingga</h2>
+                                    <h2 class="text-secondary ml-10 mr-10 mt-2 text-sm">Hingga</h2>
                                     <div class="flex flex-row">
                                         <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
                                         <p class="text-sm ml-2 pt-2.5">{{Carbon\Carbon::parse($kegiatan->tanggal_selesai)->format('d M Y')}}</p>
@@ -109,7 +109,7 @@
                                 </div>      
                                 <div class="relative mr-auto ml-auto pt-8">
                                     @if($kegiatan->status == 1)
-                                    <div class="relative mr-auto ml-auto pt-8">
+                                    <div class="relative mr-auto ml-auto pt-0">
                                         <div type="button" class="py-1 md:py-2 rounded-md bg-haha">
                                             <p class="px-8 md:px-16 text-xs md:text-sm text-white">Aktif</p>
                                         </div>
@@ -130,7 +130,7 @@
                                 <div class="flex flex-row">
                                     <h1 class="absolute pt-8 ml-5 font-bold text-xl">Rekap Penilaian Kegiatan</h1>
                                     <div>
-                                        <div class="absolute left-3/4 pl-34 pt-9">
+                                        <div class="absolute left-3/4 pl-26 pt-9">
                                             <div class="py-1 md:py-3 rounded-md bg-wt">
                                                 <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">{{$total}}</h3>
                                             </div>

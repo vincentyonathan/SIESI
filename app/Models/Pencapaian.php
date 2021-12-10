@@ -10,6 +10,7 @@ class Pencapaian extends Model
     use HasFactory;
     public $table = "pencapaian";
     protected $primaryKey = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'id',

@@ -48,7 +48,7 @@
                 <ul class="pt-10 flex flex-col items-center">
                     <li>
                         <button>
-                            <a href="#">
+                            <a href="{{route('mainpage')}}">
                                 <img src="/images/SIETS.png" alt="" class="w-40">
                             </a>
                         </button>    
@@ -56,7 +56,7 @@
                     <div class="py-0.3 rounded-full bggaris w-3/4"></div>
                     <li class="mt-10 w-3/4 h-10">
                         <button class="activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                            <a href="{{route('mainpage')}}" class="flex items-center">
                                 <img src="/images/kegiatanabu.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/kegiatanoren.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Kegiatan</span>
@@ -65,7 +65,7 @@
                     </li>
                     <li class="mt-10 w-3/4 h-10">
                         <button class="activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                            <a href="{{route('addKegiatan')}}" class="flex items-center">
                                 <img src="/images/tambahabu.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/tambahoren.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Tambah Kegiatan</span>
@@ -73,13 +73,14 @@
                         </button>
                     </li>
                     <li class="mt-10 w-3/4 h-10">
-                        <button class="activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button type="submit" class="flex items-center activity bg-transparent rounded-md px-2 py-2 w-full h-12 text-secondary hover:bg-primary hover:text-primary">
                                 <img src="/images/keluarabu.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/keluaroren.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Keluar</span>
-                            </a>
-                        </button>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -91,51 +92,74 @@
                     <div class="flex flex-wrap px-4">
                         <div class="flex flex-col my-2 px-2 w-full md:w-full lg:w-full xl:w-full">
                             <div class="flex flex-col pl-8">
+                                <form action="{{route('editkegiatan.post')}}" method="post">
+                                @csrf
+                                <input type="hidden" name='id' value='{{$kegiatan->id}}'>
                                 <label for="name" class="pt-3 text-base font-medium">Nama</label>
-                                <input name="name" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name">                      
+                                <input name="nama_kegiatan" value='{{$kegiatan->nama_kegiatan}}' type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name">                      
                                 <label for="message" class="pt-3 text-base font-medium">Deskripsi Kegiatan</label>
-                                <textarea id="message" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+                                <textarea id="message" name='deskripsi_kegiatan' rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment...">{{$kegiatan->deskripsi_kegiatan}}</textarea>
                                 <label for="date" class="pt-3 text-base font-medium">Tanggal</label>
                                     <div date-rangepicker class="flex items-center">
                                         <div class="relative">
                                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                                 <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                                             </div>
-                                            <input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
+                                            <input value='{{Carbon\Carbon::parse($kegiatan->tanggal_mulai)->format('m/d/Y')}}'  name="tanggal_mulai" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
                                         </div>
                                         <span class="mx-10 text-gray-500">to</span>
                                         <div class="relative">
                                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                                 <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                                             </div>
-                                            <input name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date end">
+                                            <input value='{{Carbon\Carbon::parse($kegiatan->tanggal_selesai)->format('m/d/Y')}}' name="tanggal_selesai" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date end">
                                         </div>
                                     </div>
+                                    <div class="pt-10 flex flex-row top-32 left-1/3">
+                                        <div class="px-2">
+                                            <button type="button" class="py-1 md:py-2 rounded-md bg-btn">
+                                                <a href="{{route('mainpage')}}" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
+                                            </button>
+                                            <button id="myBtn2" class="py-1 md:py-2 rounded-md bg-woops">
+                                                <a href="{{route('deletekegiatan',$kegiatan->id)}}" class="px-8 md:px-16 text-xs md:text-sm text-white">Hapus</a>
+                                            </button>
+                                            <button  class="py-1 md:py-2 rounded-md bg-eh">
+                                                <a href="{{route('gantistatus',$kegiatan->id)}}" class="px-8 md:px-16 text-xs md:text-sm text-white">Kunci</a>
+                                            </button>
+                                            <button id="myBtn" type="submit" class="py-1 md:py-2 rounded-md bg-wt">
+                                                <span class="px-8 md:px-16 text-xs md:text-sm text-black">Simpan</span>
+                                            </button>
+                                        </div>    
+                                    </div>
+                                </form>
                             </div>
+                            
+                           
                             <div class="pt-3 px-8">
                                 <div class="py-0.1 rounded-full bggaris w-full"></div>
                             </div>
-                            <div class="px-8 flex flex-col">
-                                <div class="rounded-sm absolute top-80 h-3/5 bg-white w-8/7">   
-                                    <h1 class="absolute pt-8 ml-5 font-bold text-xl">Capaian Kegiatan</h1>
+                            <div class="mt-8 px-8 flex flex-col">
+                                <div class="rounded-sm top-80 h-3/5 bg-white">   
+                                    <h1 class="pt-8 ml-5 font-bold text-xl">Capaian Kegiatan</h1>
                                     <div class="flex flex-col pt-10 pt-20 card h-140 overflow-y-scroll">
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                            <div class="flex flex-col">
+                                        @foreach($capaian as $c)
+                                        <div class="rounded-sm bg-white w-full">
+                                            <div class="flex flex-col ">
                                                 <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
+                                                    <div class="flex flex-col flex-grow">
+                                                        <h1 class="title1 font-bold align-top text-base">{{$c->nama_pokok}}</h1>
+                                                        <p>{{$c->deskripsi}}</p>
                                                     </div>
-                                                    <div>
+                                                    <div class="justify-center align">
                                                         <div class="relative mr-auto ml-auto pt-8 pl-20">
                                                             <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
+                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black">{{$c->bobot}}</h3>
                                                             </div>
                                                         </div>  
                                                     </div>
                                                     <div>
                                                         <button>
-                                                            <a href="">
+                                                            <a href="{{route('deletecapaian',$c->id)}}">
                                                                 <img src="/images/trashbin.png" alt="" class="pt-5">
                                                             </a>
                                                         </button>   
@@ -146,90 +170,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                        <div class="flex flex-col">
-                                                <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                                                    </div>
-                                                    <div>
-                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                    <div>
-                                                        <button>
-                                                            <a href="">
-                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
-                                                            </a>
-                                                        </button>   
-                                                    </div>
-                                                </div>
-                                                <div class="pt-6">
-                                                    <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                            <div class="flex flex-col">
-                                                <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                                                    </div>
-                                                    <div>
-                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                    <div>
-                                                        <button>
-                                                            <a href="">
-                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
-                                                            </a>
-                                                        </button>   
-                                                    </div>
-                                                </div>
-                                                <div class="pt-6">
-                                                    <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rounded-sm relative bg-white w-full h-30">
-                                            <div class="flex flex-col">
-                                                <div class="flex flex-row px-5">
-                                                    <div class="flex flex-col">
-                                                        <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                                        <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                                                    </div>
-                                                    <div>
-                                                        <div class="relative mr-auto ml-auto pt-8 pl-20">
-                                                            <div class="py-1 md:py-3 rounded-md bg-wt">
-                                                                <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                    <div>
-                                                        <button>
-                                                            <a href="">
-                                                                <img src="/images/trashbin.png" alt="" class="pt-5">
-                                                            </a>
-                                                        </button>   
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pt-6">
-                                                <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="h-20">
-                                        <div class="flex flex-row pl-4">
+                                        @endforeach
+                                    <div>
+                                        <div class="pl-4 pt-4">
                                             <button onclick="openmodal()" class="add flex flex-row">
                                                 <img src="/images/plus.png" alt="" class="h-8">
                                                 <h1 class="pt-1 pl-2">Tambah Capaian</h1>
@@ -241,24 +184,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative flex flex-row top-full mt-60 left-1/3">
-                    <div class="px-2">
-                        <button class="py-1 md:py-2 rounded-md bg-btn">
-                            <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Batal</a>
-                        </button>
-                        <button id="myBtn2" class="py-1 md:py-2 rounded-md bg-woops">
-                            <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-white">Hapus</a>
-                        </button>
-                        </div>
-                        <button class="py-1 md:py-2 rounded-md bg-eh">
-                            <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-white">Kunci</a>
-                        </button>
-                        <button id="myBtn" class="py-1 md:py-2 rounded-md bg-wt">
-                            <a href="#" class="px-8 md:px-16 text-xs md:text-sm text-black">Simpan</a>
-                        </button>
-                        </div>
-                    </div>    
-                </div>
             </div>
         </div>
     </div>
@@ -269,20 +194,25 @@
         <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div class="sm:flex sm:items-start">
-            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                <label for="name" class="pt-4 text-base font-medium">Nama Capaian</label>
-                <input name="name" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nama Capaian">                      
-                <label for="message" class="pt-4 text-base font-medium">Deskripsi Capaian</label>
-                <textarea id="message" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deskripsi Capaian"></textarea>
-                <label for="bobot" class="pt-4 text-base font-medium">Bobot</label>
-                <input name="bobot" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Bobot">                      
-            </div>
+            <form action="{{route('addcapaian.post')}}" method="post">
+                @csrf
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                    <input type="hidden" name='id_kegiatan' value="{{$kegiatan->id}}">
+                    <label for="name" class="pt-4 text-base font-medium">Nama Capaian</label>
+                    <input name="nama_pokok" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nama Capaian">                      
+                    <label for="message" class="pt-4 text-base font-medium">Deskripsi Capaian</label>
+                    <textarea id="message" name='deskripsi' class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deskripsi Capaian"></textarea>
+                    <label for="bobot" class="pt-4 text-base font-medium">Bobot</label>
+                    <input name="bobot" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Bobot">                      
+                </div>
+            
             </div>
         </div>
         <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-            <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
-            Submit
+            <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                Submit
             </button>
+        </form>
             <button onclick="closemodal()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
             Cancel
             </button>
@@ -291,40 +221,7 @@
     </div>
     </div>
 
-    <script>
-        var openmodal = document.querySelectorAll('.modal-open')
-        for (var i = 0; i < openmodal.length; i++) {
-          openmodal[i].addEventListener('click', function(event){
-            event.preventDefault()
-            toggleModal()
-          })
-        }
-        const overlay = document.querySelector('.modal-overlay')
-        overlay.addEventListener('click', toggleModal)
-        var closemodal = document.querySelectorAll('.modal-close')
-        for (var i = 0; i < closemodal.length; i++) {
-          closemodal[i].addEventListener('click', toggleModal)
-        }
-        document.onkeydown = function(evt) {
-          evt = evt || window.event
-          var isEscape = false
-          if ("key" in evt) {
-            isEscape = (evt.key === "Escape" || evt.key === "Esc")
-          } else {
-            isEscape = (evt.keyCode === 27)
-          }
-          if (isEscape && document.body.classList.contains('modal-active')) {
-            toggleModal()
-          }
-        };
-        function toggleModal () {
-          const body = document.querySelector('body')
-          const modal = document.querySelector('.modal')
-          modal.classList.toggle('opacity-0')
-          modal.classList.toggle('pointer-events-none')
-          body.classList.toggle('modal-active')
-        }
-      </script> 
+    
       <script>
           function openmodal()
           {
@@ -339,43 +236,7 @@
                 x.style.display = "none"
           }
       </script>
-      <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const card = document.querySelector('.card')
-            const add = document.querySelector('.add')
-            add.addEventListener('click', () => {
-                const html = `<div class="rounded-sm relative bg-white w-full h-30 pt-2">
-                    <div class="flex flex-col">
-                        <div class="flex flex-row px-5">
-                            <div class="flex flex-col">
-                                <h1 class="title1 font-bold align-top text-base">Kegiatan</h1>
-                                <p>Duis sagittis aliquam arcu, vel cursus tellus sodales et. Quisque eu urna eget dolor ultrices vehicula nec nec dolor. Nulla porta urna vel. . .</p>
-                            </div>
-                            <div>
-                                <div class="relative mr-auto ml-auto pt-8 pl-20">
-                                        <div class="py-1 md:py-3 rounded-md bg-wt">
-                                            <h3 class="px-7 md:px-7 text-xs md:text-sm text-black"></h3>
-                                        </div>
-                                    </div>  
-                                </div>
-                                <div>
-                                    <button>
-                                        <a href="">
-                                            <img src="/images/trashbin.png" alt="" class="pt-5">
-                                        </a>
-                                    </button>   
-                                </div>
-                        </div>
-                    </div>
-                    <div class="pt-6">
-                        <div class="py-0.1 rounded-full bggaris w-full opacity-50"></div>
-                    </div>
-                </div>`;
-                const addCard = document.querySelector(`.card`);
-                addCard.innerHTML += html;
-            });
-        })
-      </script>
+      
       <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
       <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/datepicker.bundle.js"></script>
 </body>

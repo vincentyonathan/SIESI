@@ -35,6 +35,7 @@ Route::post('/editkegiatan/post',[KegiatanController::class,'editKegiatan'])->na
 
 Route::get('/deletekegiatan/{id}',[KegiatanController::class,'deleteKegiatan'])->name('deletekegiatan');
 Route::get('/gantistatus/{id}',[KegiatanController::class,'gantiStatus'])->name('gantistatus');
+Route::get('/hasilsurvey/{id}',[KegiatanController::class,'hasilsurveypage'])->name('hasilsurvey');
 
 // CAPAIAN
 

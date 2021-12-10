@@ -108,22 +108,29 @@
                                         <img src="/images/tanggal.png" alt="" class="w-1/6 pt-1">
                                         <p class="text-sm ml-2 pt-2.5">{{$kegiatan->tanggal_selesai}}</p>
                                     </div>
-                                </div>      
-                                @if($kegiatan->status == 1)
-                                <a href="{{route('isisurvey',$kegiatan->id)}}">
-                                    <div class="relative mr-auto ml-auto pt-8">
-                                        <div type="button" class="py-1 md:py-2 rounded-md bg-haha">
-                                            <p class="px-8 md:px-16 text-xs md:text-sm text-white">Aktif</p>
+                                </div>     
+                                <div>
+                                    <a href="{{route('hasilsurvey',$kegiatan->id)}}">
+                                        <div class="relative mr-auto ml-auto pt-2">
+                                            <div type="button" class="py-1 md:py-2 rounded-md bg-haha">
+                                                <p class="px-8 md:px-16 text-xs md:text-sm text-white">Lihat Hasil</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                @else
-                                <div class="relative mr-auto ml-auto pt-8">
-                                    <div type="button" class="py-1 md:py-2 rounded-md bg-haha">
+                                    </a> 
+                                    @if($kegiatan->status == 1)
+                                    <a href="{{route('isisurvey',$kegiatan->id)}}">
+                                        <div class="relative mr-auto ml-auto pt-2">
+                                            <div type="button" class="py-1 md:py-2 rounded-md bg-haha">
+                                                <p class="px-8 md:px-16 text-xs md:text-sm text-white">Aktif</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    @else
+                                    <button class="py-1 md:py-2 mt-2 rounded-md bg-btn">
                                         <p class="px-8 md:px-16 text-xs md:text-sm text-white">Tutup</p>
-                                    </div>
-                                </div>
-                                @endif                           
+                                    </button>
+                                    @endif  
+                                </div>                         
                             </div>
                             <div class="pt-2 px-8">
                                 <div class="py-0.1 rounded-full bggaris w-full"></div>

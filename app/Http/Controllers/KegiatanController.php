@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kegiatan;
 use App\Models\Pencapaian;
+use App\Models\Penilaian as Nilai;
 use Carbon\Carbon as Carbon;
 use Auth;
 
@@ -103,5 +104,20 @@ class KegiatanController extends Controller
         }
         Kegiatan::where('id',$id)->delete();
         return redirect()->route('mainpage');
+    }
+
+    public function hasilsurveypage($id){
+        $kegiatan = Kegiatan::where('id',$id)->first();
+        $capaian = Pencapaian::where('id_kegiatan',$id)->get();
+        $total = 0;
+        foreach($capaian as $c){
+            $nilai = Nilai::where('id_pencapaian',$c->id)->get();
+            foreach($nilai as $n){
+                $c->totalNilai = $c->totalNilai + $n->nilai;
+            }
+            $c->totalNilai = $c->totalNilai / $nilai->count() * $c->bobot;
+            $total = $total + $c->totalNilai;
+        }
+        return view('lihathasilsurvey',compact('kegiatan','capaian','total'));
     }
 }

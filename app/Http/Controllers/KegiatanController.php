@@ -32,14 +32,11 @@ class KegiatanController extends Controller
 
     public function addKegiatan(Request $request)
     {
-        if(!Auth::check()){
-            return redirect('/login');
-        }
         $request->validate([
-            'nama_kegiatan' => 'required',
-            'deskripsi_kegiatan' => 'required',
-            'tanggal_mulai' => 'required',
-            'tanggal_selesai' => 'required',
+            'nama_kegiatan' => 'required|string|max:256',
+            'deskripsi_kegiatan' => 'required|string|max:2048',
+            'tanggal_mulai' => 'required|date',
+            'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
         ]);
 
         Kegiatan::create([

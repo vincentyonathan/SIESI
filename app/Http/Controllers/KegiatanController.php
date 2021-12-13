@@ -123,15 +123,21 @@ class KegiatanController extends Controller
     }
 
     public function hasilsurveypage($id){
-        $kegiatan = Kegiatan::where('id',$id)->first();
+        $kegiatan = Kegiatan::find($id);
+        
+        if ($kegiatan == NULL) abort(404);
+
         $capaian = Pencapaian::where('id_kegiatan',$id)->get();
+        
         $total = 0;
         foreach($capaian as $c){
             $nilai = Nilai::where('id_pencapaian',$c->id)->get();
             foreach($nilai as $n){
                 $c->totalNilai = $c->totalNilai + $n->nilai;
             }
-            $c->totalNilai = $c->totalNilai / $nilai->count() * $c->bobot;
+            // Division by zero avoidance
+            if ($nilai->count() == 0) $c->totalNilai = 0;
+            else $c->totalNilai = $c->totalNilai / $nilai->count() * $c->bobot;
             $total = $total + $c->totalNilai;
         }
         return view('lihathasilsurvey',compact('kegiatan','capaian','total'));

@@ -114,11 +114,11 @@ class KegiatanController extends Controller
 
     public function deleteKegiatan($id)
     {
+        $kegiatan = Kegiatan::find($id);
 
-        if(!Auth::check()){
-            return redirect('/login');
-        }
-        Kegiatan::where('id',$id)->delete();
+        if ($kegiatan == NULL) abort(404);
+        
+        $kegiatan->delete();
         return redirect()->route('mainpage');
     }
 

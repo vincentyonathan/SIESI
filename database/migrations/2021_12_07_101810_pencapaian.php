@@ -19,6 +19,6 @@ class Pencapaian extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('pencapaian');
+        Schema::dropIfExists('penilaian');
     }
 }

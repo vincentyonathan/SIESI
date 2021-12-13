@@ -83,23 +83,33 @@ class KegiatanController extends Controller
         return redirect()->route('editkegiatan',$request->id);
     }
 
-    public function gantiStatus($id){
+    public function gantiStatus($id) 
+    {
+        // Jika ID tidak valid, maka 403
+        if (!is_numeric($id)) abort(403);
 
-        if(!Auth::check()){
-            return redirect('/login');
-        }
-        $kegiatan = Kegiatan::where('id',$id)->first();
+        $kegiatan = Kegiatan::find($id);
+
+        // Jika kegiatan tidak ada, maka 404
+        if ($kegiatan == NULL) abort(404);
+
+        $message = NULL;
+
         if($kegiatan->status == 1){
-            Kegiatan::where('id',$id)->update([
+            $kegiatan->update([
                 'status' => 0,
             ]);
+
+            $message = "Survey kegiatan tidak aktif.";
         }
         else{
-            Kegiatan::where('id',$id)->update([
+            $kegiatan->update([
                 'status' => 1,
             ]);
+
+            $message = "Survey kegiatan aktif";
         }
-        return redirect()->route('editkegiatan',$id);
+        return redirect()->route('editkegiatan',$id)->with('message', $message);
     }
 
     public function deleteKegiatan($id)

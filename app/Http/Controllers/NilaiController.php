@@ -12,17 +12,13 @@ class NilaiController extends Controller
 {
     public function isisurveypage($id)
     {
-        
         $kegiatan = Kegiatan::find($id);
+        
+        if ($kegiatan == NULL) abort(404);
+        
         $capaian = Pencapaian::where('id_kegiatan', $kegiatan->id)->get();
-
-        if(Auth::check()){
-            $user = Auth::user();
-            $id_user = $user->user_id;
-        }
-        else {
-            return redirect('/login');
-        }
+        
+        $id_user = auth()->id();
         
         foreach($capaian as $cap){
             $nilai = Penilaian::where('id_pencapaian', $cap->id)->where('id_user', $id_user)->first();
@@ -38,21 +34,13 @@ class NilaiController extends Controller
     
     public function addNilai(Request $request)
     {
-        
         $request->validate([
-            'id_capaian' => 'required',
-            'nilai' => 'required',
+            'id_capaian.*' => 'required|numeric|min:1',
+            'nilai.*' => 'required|numeric|between:0,100',
         ]);
-        if(Auth::check()) {
-            $user = Auth::user();
-            $id_user = $user->user_id;
-        }
-        else {
-            return redirect('/login');
-        }
-
         $id_pencapaian = $request->id_capaian;
         $nilai = $request->nilai;
+        $id_user = auth()->id();
         for($i = 0; $i < count($request->id_capaian); $i++)
         {
             Penilaian::create([
@@ -62,7 +50,6 @@ class NilaiController extends Controller
                 'komentar' => '',
             ]);
         }
-
-        return redirect()->route('mainpage')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('mainpage')->with('message', 'Data berhasil ditambahkan');
     }
 }

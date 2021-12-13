@@ -42,6 +42,9 @@
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
 </head>
 <body>
+    @if (session()->has('message'))
+    <script>alert('{{ session()->get('message') }}')</script>
+    @endif
     <div class="wrapper">
         <div class="grid grid-cols-14">
             <div class="col-span-3 h-screen bg-white">
@@ -221,7 +224,6 @@
     </div>
     </div>
 
-    
       <script>
           function openmodal()
           {

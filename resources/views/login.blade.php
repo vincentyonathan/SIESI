@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="flex">
-            <div class="flex flex-col absolute top-20 items-center">
+            <div class="flex flex-col pt-10 h-screen overflow-scroll items-center">
                 <img src="/images/SIETS.png" alt="tulisan" class="w-1/2">
                 <div class="pt-4 pb-16">
                     <div class="py-0.3 rounded-full bggaris w-97"></div>
@@ -49,6 +49,11 @@
                 <div class="py-8 w-97">
                     <form action="{{route('login.post')}}" method="POST">
                         @csrf
+                        @if (session()->has('error'))
+                        <p class="border border-red-500 p-4 mb-2">
+                            {{ session()->get('error') }}
+                        </p>
+                        @endif
                         <label for="email" class="justify-center text-base md:text-xl font-medium">Username</label><br>
                         <div class="py-1"></div>
                         <input name="username" type="text" class="outline-none rounded-sm border border-gray-400 py-1 px-4 w-72 md:w-full text-sm focus:ring-2 focus:ring-form

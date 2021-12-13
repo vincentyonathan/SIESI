@@ -16,14 +16,11 @@ class PencapaianController extends Controller
  
     public function addCapaian(Request $request)
     {
-        if(!Auth::check()){
-            return redirect('/login');
-        }
         $request->validate([
-            'id_kegiatan' => 'required',
-            'nama_pokok' => 'required',
-            'deskripsi' => 'required',
-            'bobot' => 'required',
+            'id_kegiatan' => 'required|numeric|min:1',
+            'nama_pokok' => 'required|string|max:256',
+            'deskripsi' => 'required|string|max:2048',
+            'bobot' => 'required|numeric|min:1',
         ]);
 
         Pencapaian::create([
@@ -33,19 +30,19 @@ class PencapaianController extends Controller
             'bobot' => $request->get('bobot'),
         ]);
 
-        return redirect()->route('editkegiatan',$request->id_kegiatan)->with('success', 'Data Pencapaian berhasil ditambahkan');
+        return redirect()->route('editkegiatan',$request->id_kegiatan)->with('message', 'Data Pencapaian berhasil ditambahkan');
     }
 
 
     public function deleteCapaian($id,$keg)
     {
+        $pencapaian = Pencapaian::find($id);
+        
+        if ($pencapaian == NULL) abort(404);
 
-        if(!Auth::check()){
-            return redirect('/login');
-        }
-        Pencapaian::where('id', $id)->delete();
+        $pencapaian->delete();
 
-        return redirect()->route('editkegiatan',$keg)->with('success', 'Data Pencapaian berhasil dihapus');
+        return redirect()->route('editkegiatan',$keg)->with('message', 'Data Pencapaian berhasil dihapus');
     }
 
 }
